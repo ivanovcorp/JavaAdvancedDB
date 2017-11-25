@@ -13,10 +13,13 @@ public class Runner {
         SessionFactory sessionFactory = cfg.buildSessionFactory();
         try (Session session = sessionFactory.openSession()) {
             session.beginTransaction();
-            /*Student joro = new Student("Ivcho", 35);
-            session.save(joro);
+            session.save(new Student("Ivan", 25));
+            session.save(new Student("Georgi", 45));
+            session.save(new Student("Peter", 27));
+            session.save(new Student("Glavon", 21));
+            session.save(new Student("Ceco", 33));
             session.getTransaction().commit();
-            session.close();*/
+            
             Student st = session.get(Student.class, 2);
             System.out.println(st.getName() + " " + st.getId() + " "  + st.getAge());
         }

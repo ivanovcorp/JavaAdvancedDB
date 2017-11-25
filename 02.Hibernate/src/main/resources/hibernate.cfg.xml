@@ -5,7 +5,7 @@
    <session-factory>
 
       <property name = "hibernate.dialect">
-         org.hibernate.dialect.MySQLDialect
+         org.hibernate.dialect.MySQL5Dialect
       </property>
 
       <property name = "hibernate.connection.driver_class">
@@ -15,7 +15,7 @@
       <!-- Assume test is the database name -->
 
       <property name = "hibernate.connection.url">
-         jdbc:mysql://localhost:3306/school
+         jdbc:mysql://localhost:3306/school?createDatabaseIfNotExist=true
       </property>
 
       <property name = "hibernate.connection.username">
@@ -23,7 +23,11 @@
       </property>
 
       <property name = "hibernate.connection.password">
-        test
+        ivanovcorp92
+      </property>
+      
+      <property name="hbm2ddl.auto">
+      	create
       </property>
 
       <!-- List of XML mapping files -->
